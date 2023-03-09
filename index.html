@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <title>CISA 2023</title>
+</head>
+
+<style>
+  .my-max-width {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .my-black {
+    background-color: rgb(26, 26, 26);
+    color: white;
+  }
+
+  .my-blue {
+    background-color: rgb(0, 56, 98);
+    color: white;
+  }
+
+  .my-text-green {
+    color: rgb(102, 227, 97);
+  }
+
+  .my-bold {
+    font-weight: bold;
+  }
+
+  .my-italic {
+    font-style: italic;
+  }
+
+
+  .keynote-name {
+    font-weight: bold;
+  }
+
+  .patron-logo {
+    max-height: 105px;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /*background: lightslategray;*/
+    /*background: white;*/
+    background: rgb(0, 56, 98);
+    /*border-left: white 1px solid;*/
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(0, 56, 98);
+    border: white 1px solid;
+
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: white;
+    border: rgb(0, 56, 98) 1px solid;
+  }
+</style>
+
+<body>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top" style='height: 55px; max-height: 55px;'>
+    <div class="w3-bar w3-white w3-padding w3-card">
+      <a href="#home" class="w3-bar-item w3-button">LOGO</a>
+      <div class="w3-right">
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="w3-container my-black w3-center" style="margin-top: 55px" id="home">
+    <div class="my-max-width">
+      <div class="w3-cell-row w3-padding-16">
+        <img class="w3-cell" src="assets/images/cisa-logo.png" alt="cisa-logo" height="125px;">
+        <h1 class="w3-cell w3-cell-middle w3-xxlarge my-bold">CISA 2023 - V Congreso Ibérico de Sistematica biológicA
+        </h1>
+      </div>
+      <img class="w3-image" src="assets/images/oso-planta.jpg" alt="header image of bear">
+    </div>
+  </header>
+
+  <!-- Introduction text -->
+  <article class="w3-container my-black w3-padding-16">
+    <div class="my-max-width" w3-include-html="text/introduction-text.html"></div>
+  </article>
+
+  <!-- Keynote speakers -->
+  <article class="w3-container my-blue w3-padding-16">
+    <div class="my-max-width">
+      <h2 class="w3-center my-bold">Keynote speakers</h2>
+      <div class="w3-row-padding">
+        <div class="w3-third">
+          <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin"
+            w3-include-html="text/keynote-1-text.html">
+          </div>
+        </div>
+        <div class="w3-third">
+          <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin"
+            w3-include-html="text/keynote-2-text.html">
+          </div>
+        </div>
+        <div class="w3-third">
+          <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin"
+            w3-include-html="text/keynote-3-text.html">
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Program outline -->
+  <article class="w3-container my-black w3-padding-16">
+    <div class="my-max-width" w3-include-html="text/program-outline.html"></div>
+  </article>
+
+  <!-- Registration -->
+  <article class="w3-container my-blue w3-padding-16">
+    <div class="my-max-width" w3-include-html="text/registration.html"></div>
+  </article>
+
+  <!-- Map -->
+  <article class="w3-container my-black w3-padding-16 w3-center">
+    <div class="my-max-width" w3-include-html="text/google-map.html"></div>
+  </article>
+
+  <!-- Commitees -->
+  <article class="w3-container my-blue w3-padding-16 w3-center">
+    <div class="my-max-width" w3-include-html="text/commitees.html"></div>
+  </article>
+
+  <!-- Information of interest -->
+  <article class="w3-container my-black w3-padding-16">
+    <div class="my-max-width" w3-include-html="text/information-of-interest.html"></div>
+  </article>
+
+  <!-- Patrocinadores -->
+  <article class="w3-container my-blue w3-padding-16">
+    <div class="my-max-width" w3-include-html="text/patrocinadores.html"></div>
+  </article>
+
+  <footer class="w3-container w3-center my-black">
+    <p>Icons</p>
+    <p>©2020 por CISA 2020 - Congreso Ibérico de Sistematica biológicA</p>
+  </footer>
+
+  <script>
+    w3.includeHTML();
+  </script>
+
+
+</body>
+
+</html>
