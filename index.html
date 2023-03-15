@@ -47,43 +47,7 @@
   </div>
 
   <script>
-    function toggleLanguage(lang) {
 
-      // Do nothing for same language click
-      if (lang.className == 'my-lang-selected') {
-        return
-      }
-
-      // Else switch language
-      let currentLang = document.documentElement.lang;
-      console.log('current lang:', currentLang)
-
-      let langChildren = document.getElementById("language").children;
-
-      for (i = 0; i < langChildren.length; i++) {
-        langChildren[i].classList.remove('my-lang-selected')
-      }
-
-      lang.className = 'my-lang-selected'
-      document.documentElement.lang = lang.innerText
-      let newLang = document.documentElement.lang;
-      console.log('new lang:', newLang)
-
-      let langElementsToHide = document.getElementsByClassName(`lang-${currentLang}`)
-
-      for (i = 0; i < langElementsToHide.length; i++) {
-        //langElementsToHide[i].style.display = 'none'
-        langElementsToHide[i].classList.remove('lang-show')
-        langElementsToHide[i].classList.add('lang-hidden')
-      }
-
-      let langElementsToShow = document.getElementsByClassName(`lang-${lang.innerText}`)
-
-      for (i = 0; i < langElementsToShow.length; i++) {
-        //langElementsToShow[i].style.display = 'unset'
-        langElementsToShow[i].classList.add('lang-show')
-      }
-    }
 
   </script>
 
@@ -163,6 +127,7 @@
   </footer>
 
   <script>
+
     w3.includeHTML();
 
     function toggleResponsiveNavbar() {
@@ -175,12 +140,15 @@
     }
 
     function displayTab(tabID) {
+
       let i;
       let x = document.getElementsByClassName("tab");
       for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
       }
+
       document.getElementById(tabID).style.display = "block";
+      window.scrollTo(0, 0);
 
       // toggle footer colour
       let footer = document.getElementsByTagName('footer')[0]
@@ -200,6 +168,41 @@
       } else {
         footer.classList.add("my-white");
         footer.classList.remove("my-black");
+      }
+    }
+
+    function toggleLanguage(lang) {
+
+      // Do nothing for same language click
+      if (lang.className == 'my-lang-selected') {
+        return
+      }
+
+      // Else switch language
+      let currentLang = document.documentElement.lang;
+      let langChildren = document.getElementById("language").children;
+      let i;
+
+      for (i = 0; i < langChildren.length; i++) {
+        langChildren[i].classList.remove('my-lang-selected')
+      }
+
+      lang.className = 'my-lang-selected'
+      document.documentElement.lang = lang.innerText
+      let newLang = document.documentElement.lang;
+      let langElementsToHide = document.getElementsByClassName(`lang-${currentLang}`)
+
+      for (i = 0; i < langElementsToHide.length; i++) {
+        //langElementsToHide[i].style.display = 'none'
+        langElementsToHide[i].classList.remove('lang-show')
+        langElementsToHide[i].classList.add('lang-hidden')
+      }
+
+      let langElementsToShow = document.getElementsByClassName(`lang-${lang.innerText}`)
+
+      for (i = 0; i < langElementsToShow.length; i++) {
+        //langElementsToShow[i].style.display = 'unset'
+        langElementsToShow[i].classList.add('lang-show')
       }
     }
   </script>
