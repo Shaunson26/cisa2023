@@ -22,8 +22,8 @@ h1 {
 }
 
 .my-hover-black:hover {
-    background-color: rgb(26, 26, 26)!important;
-    color: white!important;
+    background-color: rgb(26, 26, 26) !important;
+    color: white !important;
 }
 
 .my-white {
@@ -42,8 +42,14 @@ h1 {
 .my-italic {
     font-style: italic;
 }
+
 .keynote-name {
     font-weight: bold;
+}
+
+#navbar-container,
+#cisa-nav-logo {
+    height: 75px;
 }
 
 .nav-flex-center,
@@ -59,11 +65,17 @@ h1 {
     height: 50px;
 }
 
-#language > span {
+#language {
+    position: sticky;
+    top: 75px;
+    z-index: 999;
+}
+
+#language>span {
     cursor: pointer;
 }
 
-#language > span:hover {
+#language>span:hover {
     font-weight: bold;
 }
 
@@ -80,10 +92,10 @@ h1 {
 }
 
 .hero {
-    height: 400px;    
+    height: 400px;
     background-image: url('../images/oso-planta.jpg');
     background-size: cover;
-    background-position: center;  
+    background-position: center;
 }
 
 #hero-text {
@@ -136,18 +148,27 @@ h1 {
         display: block;
     }
 
+    #navbar-container,
+    #cisa-nav-logo {
+        height: 50px;
+    }
+
+    #language {
+        top: 50px;
+    }
+
     .hero {
         height: 250px;
     }
-    
+
     #hero-text {
         font-size: 18px;
     }
-    
+
     #hero-text h1 {
         font-size: 24px;
     }
-    
+
 
     .keynote-card {
         margin-left: 0px;
@@ -171,4 +192,3 @@ h1 {
     }
 
 }
-
