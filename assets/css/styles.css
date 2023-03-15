@@ -1,0 +1,174 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Big Shoulders Text', sans-serif;
+}
+
+.my-max-width {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.my-black {
+    background-color: rgb(26, 26, 26);
+    color: white;
+}
+
+.my-hover-black:hover {
+    background-color: rgb(26, 26, 26)!important;
+    color: white!important;
+}
+
+.my-white {
+    background-color: rgb(231, 231, 231);
+    color: black;
+}
+
+.my-text-green {
+    color: rgb(102, 227, 97);
+}
+
+.my-bold {
+    font-weight: bold;
+}
+
+.my-italic {
+    font-style: italic;
+}
+.keynote-name {
+    font-weight: bold;
+}
+
+.nav-flex-center,
+.button-flex-center {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 50px;
+}
+
+#language > span {
+    cursor: pointer;
+}
+
+#language > span:hover {
+    font-weight: bold;
+}
+
+.lang-hidden {
+    display: none;
+}
+
+.lang-show {
+    display: unset;
+}
+
+.my-lang-selected {
+    font-weight: bold;
+}
+
+.hero {
+    height: 400px;    
+    background-image: url('../images/oso-planta.jpg');
+    background-size: cover;
+    background-position: center;  
+}
+
+#hero-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Big Shoulders Text', sans-serif;
+    text-align: left;
+    font-size: 22px;
+}
+
+#hero-text h1 {
+    font-size: 48px;
+}
+
+.my-font-weight-500 {
+    font-weight: 500;
+}
+
+.my-font-weight-900 {
+    font-weight: 900;
+}
+
+.keynote-card {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.patron-logo {
+    height: 105px;
+    max-height: 105px;
+    margin: 8px 0;
+}
+
+.patron-logo>img {
+    max-height: 100%;
+    width: 95%;
+    margin: auto;
+}
+
+.nowrap-large {
+    white-space: nowrap;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+
+    .nav-flex-center {
+        display: block;
+    }
+
+    .hero {
+        height: 250px;
+    }
+    
+    #hero-text {
+        font-size: 18px;
+    }
+    
+    #hero-text h1 {
+        font-size: 24px;
+    }
+    
+
+    .keynote-card {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .patron-logo {
+        height: 50px;
+        max-height: 105px;
+    }
+
+    .patron-logo>img {
+        max-height: 100%;
+        width: unset;
+    }
+
+
+
+    .nowrap-large {
+        white-space: unset;
+    }
+
+}
+

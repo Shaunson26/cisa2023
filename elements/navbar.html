@@ -1,0 +1,49 @@
+<div id="navbar-desktop" class="w3-bar w3-white w3-opacity-min nav-flex-center" style="height:75px;">
+    <a href="#" onclick="displayTab('home')" class="w3-left" style="padding-left:16px;">
+        <img src="assets/images/cisa-logo-small.png" alt="cisa-logo" height="75px;">
+    </a>
+    <a href="#keynote" onclick="displayTab('home')"
+        class="button-flex-center w3-button w3-hide-small w3-xlarge w3-border-white w3-bottombar my-hover-black">
+        <span class="lang-en ">Keynote Speakers</span>
+        <span class="lang-es lang-hidden">Oradores principales</span>
+        <span class="lang-pt lang-hidden">Portu</span>
+        </a>
+    <a onclick="displayTab('program')"
+        class="button-flex-center w3-button w3-hide-small w3-xlarge w3-hover-none w3-border-white w3-bottombar w3-hover-border-blue w3-hover-text-blue">
+        <span class="lang-en ">Program</span>
+        <span class="lang-es lang-hidden">Programa</span>
+        <span class="lang-pt lang-hidden">Portu</span>
+    </a>
+    <a onclick="displayTab('registration')"
+        class="button-flex-center w3-button w3-hide-small w3-xlarge w3-hover-none w3-border-white w3-bottombar w3-hover-border-dark-grey w3-hover-text-dark-grey">
+        <span class="lang-en ">Registration</span>
+        <span class="lang-es lang-hidden">Registro</span>
+        <span class="lang-pt lang-hidden">Portu</span>
+    </a>
+    <a onclick="displayTab('venue')"
+        class="button-flex-center w3-button w3-hide-small w3-xlarge w3-hover-none w3-border-white w3-bottombar w3-hover-border-teal w3-hover-text-teal">
+        <span class="lang-en ">Venue</span>
+        <span class="lang-es lang-hidden">Evento</span>
+        <span class="lang-pt lang-hidden">Portu</span>
+    </a>
+    <a onclick="displayTab('information-of-interest')"
+        class="button-flex-center w3-button w3-hide-small w3-xlarge w3-hover-none w3-border-white w3-bottombar w3-hover-border-pink w3-hover-text-pink">
+        <span class="lang-en ">Other Information</span>
+        <span class="lang-es lang-hidden">Otra información</span>
+        <span class="lang-pt lang-hidden">Portu</span>
+        information</a>
+    <a href="javascript:void(0)" id='hamburger'
+        class="button-flex-center w3-button w3-right w3-hide-large w3-hide-medium w3-hover-none w3-hover-border-blue w3-hover-text-blue w3-xxlarge"
+        onclick="toggleResponsiveNavbar()">&#9776;</a>
+</div>
+
+
+<div id="navbar-mobile" class="w3-white w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+    <a href="#keynote" class="w3-bar-item w3-button" onclick="toggleResponsiveNavbar();displayTab('home')">Keynote
+        Speakers</a>
+    <a class="w3-bar-item w3-button" onclick="toggleResponsiveNavbar();displayTab('program');">Program</a>
+    <a class="w3-bar-item w3-button" onclick="toggleResponsiveNavbar();displayTab('registration')">Registration</a>
+    <a class="w3-bar-item w3-button" onclick="toggleResponsiveNavbar();displayTab('venue')">Venue</a>
+    <a class="w3-bar-item w3-button" onclick="toggleResponsiveNavbar();displayTab('information-of-interest')">Other
+        information</a>
+</div>

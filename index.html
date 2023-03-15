@@ -6,166 +6,201 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@400;500;900&family=Open+Sans&display=swap"
+    rel="stylesheet">
   <title>CISA 2023</title>
 </head>
 
-<style>
-  .my-max-width {
-    max-width: 1200px;
-    margin: auto;
-  }
+<body class="my-white">
 
-  .my-black {
-    background-color: rgb(26, 26, 26);
-    color: white;
-  }
-
-  .my-blue {
-    background-color: rgb(0, 56, 98);
-    color: white;
-  }
-
-  .my-text-green {
-    color: rgb(102, 227, 97);
-  }
-
-  .my-bold {
-    font-weight: bold;
-  }
-
-  .my-italic {
-    font-style: italic;
-  }
-
-
-  .keynote-name {
-    font-weight: bold;
-  }
-
-  .patron-logo {
-    max-height: 105px;
-  }
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: 15px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    /*background: lightslategray;*/
-    /*background: white;*/
-    background: rgb(0, 56, 98);
-    /*border-left: white 1px solid;*/
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(0, 56, 98);
-    border: white 1px solid;
-
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: white;
-    border: rgb(0, 56, 98) 1px solid;
-  }
-</style>
-
-<body>
   <!-- Navbar (sit on top) -->
-  <div class="w3-top" style='height: 55px; max-height: 55px;'>
-    <div class="w3-bar w3-white w3-padding w3-card">
-      <a href="#home" class="w3-bar-item w3-button">LOGO</a>
-      <div class="w3-right">
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      </div>
-    </div>
+  <div style="position:sticky;top:0;z-index: 999;" w3-include-html="elements/navbar.html"></div>
+  <div class="w3-white w3-opacity-min w3-right w3-padding-small" style="position:sticky;top:75px;z-index: 999;"
+    id="language">
+    <!-- Google translator ->
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,es,pt'
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+      .goog-te-combo {
+        width: 100%
+      }
+    </style>
+    <!-- Google translator end -->
+
+    <span class="my-lang-selected" onclick="toggleLanguage(this)">en</span>|
+    <span onclick="toggleLanguage(this)">es</span>|
+    <span onclick="toggleLanguage(this)">pt</span-->
   </div>
 
-  <!-- Header -->
-  <header class="w3-container my-black w3-center" style="margin-top: 55px" id="home">
-    <div class="my-max-width">
-      <div class="w3-cell-row w3-padding-16">
-        <img class="w3-cell" src="assets/images/cisa-logo.png" alt="cisa-logo" height="125px;">
-        <h1 class="w3-cell w3-cell-middle w3-xxlarge my-bold">CISA 2023 - V Congreso Ibérico de Sistematica biológicA
-        </h1>
-      </div>
-      <img class="w3-image" src="assets/images/oso-planta.jpg" alt="header image of bear">
-    </div>
-  </header>
+  <script>
+    function toggleLanguage(lang) {
 
-  <!-- Introduction text -->
-  <article class="w3-container my-black w3-padding-16">
-    <div class="my-max-width" w3-include-html="text/introduction-text.html"></div>
-  </article>
+      // Do nothing for same language click
+      if (lang.className == 'my-lang-selected') {
+        return
+      }
 
-  <!-- Keynote speakers -->
-  <article class="w3-container my-blue w3-padding-16">
-    <div class="my-max-width">
-      <h2 class="w3-center my-bold">Keynote speakers</h2>
-      <div class="w3-row-padding">
-        <div class="w3-third">
-          <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin"
-            w3-include-html="text/keynote-1-text.html">
+      // Else switch language
+      let currentLang = document.documentElement.lang;
+      console.log('current lang:', currentLang)
+
+      let langChildren = document.getElementById("language").children;
+
+      for (i = 0; i < langChildren.length; i++) {
+        langChildren[i].classList.remove('my-lang-selected')
+      }
+
+      lang.className = 'my-lang-selected'
+      document.documentElement.lang = lang.innerText
+      let newLang = document.documentElement.lang;
+      console.log('new lang:', newLang)
+
+      let langElementsToHide = document.getElementsByClassName(`lang-${currentLang}`)
+
+      for (i = 0; i < langElementsToHide.length; i++) {
+        //langElementsToHide[i].style.display = 'none'
+        langElementsToHide[i].classList.remove('lang-show')
+        langElementsToHide[i].classList.add('lang-hidden')
+      }
+
+      let langElementsToShow = document.getElementsByClassName(`lang-${lang.innerText}`)
+
+      for (i = 0; i < langElementsToShow.length; i++) {
+        //langElementsToShow[i].style.display = 'unset'
+        langElementsToShow[i].classList.add('lang-show')
+      }
+    }
+
+  </script>
+
+  <!-- Home -->
+  <div class="tab" id="home">
+
+    <!-- header -->
+    <div w3-include-html="elements/hero.html"></div>
+
+
+    <!-- Introduction text -->
+    <article class="w3-container my-black w3-padding-16" id="home">
+      <div class="my-max-width" w3-include-html="elements/introduction-text.html"></div>
+    </article>
+
+    <!-- Keynote speakers -->
+    <article class="w3-container my-white w3-padding-16" id="keynote">
+      <div class="my-max-width">
+        <h2 class="w3-center my-bold">Keynote speakers</h2>
+        <div class="w3-row">
+          <div class="w3-third">
+            <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin-bottom keynote-card"
+              w3-include-html="elements/keynote-1-text.html">
+            </div>
           </div>
-        </div>
-        <div class="w3-third">
-          <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin"
-            w3-include-html="text/keynote-2-text.html">
+          <div class="w3-third">
+            <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin-bottom keynote-card"
+              w3-include-html="elements/keynote-2-text.html">
+            </div>
           </div>
-        </div>
-        <div class="w3-third">
-          <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin"
-            w3-include-html="text/keynote-3-text.html">
+          <div class="w3-third">
+            <div class="w3-container w3-card-2 my-black w3-center w3-padding-16 w3-margin-bottom keynote-card"
+              w3-include-html="elements/keynote-3-text.html">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </article>
+    </article>
+
+    <!-- Commitees -->
+    <article class="w3-container my-black w3-padding-16 w3-center">
+      <div class="my-max-width" w3-include-html="elements/commitees.html"></div>
+    </article>
+
+    <!-- Patrocinadores -->
+    <article class="w3-container my-white w3-padding-16">
+      <div class="my-max-width" w3-include-html="elements/patrocinadores.html"></div>
+    </article>
+  </div>
 
   <!-- Program outline -->
-  <article class="w3-container my-black w3-padding-16">
-    <div class="my-max-width" w3-include-html="text/program-outline.html"></div>
+  <article class="w3-container my-black w3-padding-16 tab" id="program" style="display:none">
+    <div class="my-max-width" w3-include-html="elements/program-outline.html"></div>
   </article>
 
   <!-- Registration -->
-  <article class="w3-container my-blue w3-padding-16">
-    <div class="my-max-width" w3-include-html="text/registration.html"></div>
+  <article class="w3-container my-black w3-padding-16 tab" id="registration" style="display:none">
+    <div class="my-max-width" w3-include-html="elements/registration.html"></div>
   </article>
 
   <!-- Map -->
-  <article class="w3-container my-black w3-padding-16 w3-center">
-    <div class="my-max-width" w3-include-html="text/google-map.html"></div>
-  </article>
-
-  <!-- Commitees -->
-  <article class="w3-container my-blue w3-padding-16 w3-center">
-    <div class="my-max-width" w3-include-html="text/commitees.html"></div>
+  <article class="w3-container my-black w3-padding-16 w3-center tab" id="venue" style="display:none">
+    <div class="my-max-width" w3-include-html="elements/google-map.html"></div>
   </article>
 
   <!-- Information of interest -->
-  <article class="w3-container my-black w3-padding-16">
-    <div class="my-max-width" w3-include-html="text/information-of-interest.html"></div>
+  <article class="w3-container my-black w3-padding-16 tab" id="information-of-interest" style="display:none">
+    <div class="my-max-width" w3-include-html="elements/information-of-interest.html"></div>
   </article>
 
-  <!-- Patrocinadores -->
-  <article class="w3-container my-blue w3-padding-16">
-    <div class="my-max-width" w3-include-html="text/patrocinadores.html"></div>
-  </article>
-
-  <footer class="w3-container w3-center my-black">
-    <p>Icons</p>
-    <p>©2020 por CISA 2020 - Congreso Ibérico de Sistematica biológicA</p>
+  <footer class="w3-container w3-center my-black" style="max-height: 150px;">
+    <p>FB IG others?</p>
+    <p>© CISA 2023 - Congreso Ibérico de Sistematica biológica</p>
   </footer>
 
   <script>
     w3.includeHTML();
-  </script>
 
+    function toggleResponsiveNavbar() {
+      let navbar = document.getElementById("navbar-mobile");
+      if (navbar.className.indexOf("w3-show") == -1) {
+        navbar.className += " w3-show";
+      } else {
+        navbar.className = navbar.className.replace(" w3-show", "");
+      }
+    }
+
+    function displayTab(tabID) {
+      let i;
+      let x = document.getElementsByClassName("tab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(tabID).style.display = "block";
+
+      // toggle footer colour
+      let footer = document.getElementsByTagName('footer')[0]
+      let documentScrollHeight = document.body.scrollHeight
+      let windowInnerHeight = window.innerHeight
+
+      if (documentScrollHeight < windowInnerHeight) {
+        footer.classList.add("w3-bottom");
+      } else {
+        footer.classList.remove("w3-bottom");
+      }
+
+      let isHome = tabID.includes('home')
+      if (isHome) {
+        footer.classList.remove("my-white");
+        footer.classList.add("my-black");
+      } else {
+        footer.classList.add("my-white");
+        footer.classList.remove("my-black");
+      }
+    }
+  </script>
 
 </body>
 
