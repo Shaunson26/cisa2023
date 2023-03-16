@@ -147,6 +147,24 @@ h1 {
     white-space: nowrap;
 }
 
+/* registration.html */
+.registration-container {
+    height: 500px;
+
+}
+
+#registration-iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* venue.html */
+#location-google-map {
+    height: 600px;
+    width: 100%;
+}
+
 /* Mobile */
 @media only screen and (max-width: 600px) {
 

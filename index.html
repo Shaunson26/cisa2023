@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/cisa.js"></script>
   <script src="https://www.w3schools.com/lib/w3.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,40 +17,15 @@
   <title>CISA 2023</title>
 </head>
 
-<body class="my-white">
+<body class="my-white" style="display:none;">
 
   <!-- Navbar (sit on top) -->
   <div style="position:sticky;top:0;z-index: 999;" w3-include-html="elements/navbar.html"></div>
   <div id='language' class="w3-white w3-opacity-min w3-right w3-padding-small">
-    <!-- Google translator ->
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'en,es,pt'
-        }, 'google_translate_element');
-      }
-    </script>
-    <script type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <style>
-      .goog-te-combo {
-        width: 100%
-      }
-    </style>
-    <!-- Google translator end -->
-
     <span class="my-lang-selected" onclick="toggleLanguage(this)">en</span>|
     <span onclick="toggleLanguage(this)">es</span>|
     <span onclick="toggleLanguage(this)">pt</span-->
   </div>
-
-  <script>
-
-
-  </script>
 
   <!-- Home -->
   <div class="tab" id="home">
@@ -112,9 +88,9 @@
     <div class="my-max-width" w3-include-html="elements/registration.html"></div>
   </article>
 
-  <!-- Map -->
+  <!-- Venue -->
   <article class="w3-container my-black w3-padding-16 w3-center tab" id="venue" style="display:none">
-    <div class="my-max-width" w3-include-html="elements/google-map.html"></div>
+    <div class="my-max-width" w3-include-html="elements/venue.html"></div>
   </article>
 
   <!-- Information of interest -->
@@ -127,84 +103,10 @@
   </footer>
 
   <script>
-
     w3.includeHTML();
-
-    function toggleResponsiveNavbar() {
-      let navbar = document.getElementById("navbar-mobile");
-      if (navbar.className.indexOf("w3-show") == -1) {
-        navbar.className += " w3-show";
-      } else {
-        navbar.className = navbar.className.replace(" w3-show", "");
-      }
-    }
-
-    function displayTab(tabID) {
-
-      let i;
-      let x = document.getElementsByClassName("tab");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-
-      document.getElementById(tabID).style.display = "block";
-      window.scrollTo(0, 0);
-
-      // toggle footer colour
-      let footer = document.getElementsByTagName('footer')[0]
-      let documentScrollHeight = document.body.scrollHeight
-      let windowInnerHeight = window.innerHeight
-
-      if (documentScrollHeight < windowInnerHeight) {
-        footer.classList.add("w3-bottom");
-      } else {
-        footer.classList.remove("w3-bottom");
-      }
-
-      let isHome = tabID.includes('home')
-      if (isHome) {
-        footer.classList.remove("my-white");
-        footer.classList.add("my-black");
-      } else {
-        footer.classList.add("my-white");
-        footer.classList.remove("my-black");
-      }
-    }
-
-    function toggleLanguage(lang) {
-
-      // Do nothing for same language click
-      if (lang.className == 'my-lang-selected') {
-        return
-      }
-
-      // Else switch language
-      let currentLang = document.documentElement.lang;
-      let langChildren = document.getElementById("language").children;
-      let i;
-
-      for (i = 0; i < langChildren.length; i++) {
-        langChildren[i].classList.remove('my-lang-selected')
-      }
-
-      lang.className = 'my-lang-selected'
-      document.documentElement.lang = lang.innerText
-      let newLang = document.documentElement.lang;
-      let langElementsToHide = document.getElementsByClassName(`lang-${currentLang}`)
-
-      for (i = 0; i < langElementsToHide.length; i++) {
-        //langElementsToHide[i].style.display = 'none'
-        langElementsToHide[i].classList.remove('lang-show')
-        langElementsToHide[i].classList.add('lang-hidden')
-      }
-
-      let langElementsToShow = document.getElementsByClassName(`lang-${lang.innerText}`)
-
-      for (i = 0; i < langElementsToShow.length; i++) {
-        //langElementsToShow[i].style.display = 'unset'
-        langElementsToShow[i].classList.add('lang-show')
-      }
-    }
+    window.onload = (event) => {
+      document.getElementsByTagName('body')[0].style.display = 'unset'
+    };
   </script>
 
 </body>
