@@ -18,18 +18,23 @@ function displayTab(tabID) {
     document.getElementById(tabID).style.display = "block";
     window.scrollTo(0, 0);
 
-    // toggle footer colour
+    // toggle footer colour and position
     let footer = document.getElementsByTagName('footer')[0]
-    let documentScrollHeight = document.body.scrollHeight
+    
+    //let documentScrollHeight = document.body.scrollHeight
+    let documentScrollHeight = document.documentElement.scrollHeight
     let windowInnerHeight = window.innerHeight
 
-    if (documentScrollHeight < windowInnerHeight) {
+    console.log('docu height', documentScrollHeight, 'window height', windowInnerHeight)
+
+    if (documentScrollHeight <= windowInnerHeight) {
         footer.classList.add("w3-bottom");
     } else {
         footer.classList.remove("w3-bottom");
     }
 
     let isHome = tabID.includes('home')
+
     if (isHome) {
         footer.classList.remove("my-white");
         footer.classList.add("my-black");
