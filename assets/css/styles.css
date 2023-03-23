@@ -163,6 +163,12 @@ h1 {
 }
 
 /* venue.html */
+.venue-row {
+    display: flex;
+    align-items: center;
+    line-height: 2em;
+}
+
 #location-google-map {
     height: 600px;
     width: 100%;
@@ -213,6 +219,16 @@ h1 {
 
     .nowrap-large {
         white-space: unset;
+    }
+
+    /* venue.html */
+    .venue-row {
+        flex-direction: column;
+        line-height: unset;
+    }
+
+    .flex-sm-col-reverse {
+        flex-direction: column-reverse;
     }
 
 }
