@@ -35,10 +35,10 @@
   <meta name="twitter:image" content="https://cisa2023.com/assets/images/cisa-logo.png">
 
   <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-        
+
 </head>
 
-<body class="my-white" style="display:none;">
+<body class="my-white" style="opacity:0;">
 
   <!-- Navbar (sit on top) -->
   <div style="position:sticky;top:0;z-index: 999;" w3-include-html="elements/navbar.html"></div>
@@ -103,7 +103,21 @@
   <script>
     w3.includeHTML();
     window.onload = (event) => {
-      document.getElementsByTagName('body')[0].style.display = 'unset'
+      setTimeout(function () {
+        let body = document.getElementsByTagName('body')[0]
+        var opacity = 0;
+        var intervalID = setInterval(function () {
+
+          if (opacity < 1) {
+            opacity = opacity + 0.01
+            body.style.opacity = opacity;
+          } else {
+            clearInterval(intervalID);
+          }
+        }, 10);
+      },
+        1000)
+
     };
   </script>
 
