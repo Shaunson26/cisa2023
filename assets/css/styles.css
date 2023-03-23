@@ -7,7 +7,8 @@ body {
 }
 
 body,
-h2 {
+h2,
+h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -35,10 +36,6 @@ h1 {
     color: black;
 }
 
-.my-text-green {
-    color: rgb(102, 227, 97);
-}
-
 .my-bold {
     font-weight: bold;
 }
@@ -47,10 +44,7 @@ h1 {
     font-style: italic;
 }
 
-.keynote-name {
-    font-weight: bold;
-}
-
+/* Main */
 #navbar-container,
 #cisa-nav-logo {
     height: 75px;
@@ -126,14 +120,14 @@ h1 {
     font-weight: 900;
 }
 
+/* Keynote-speakers.html */
 .keynote-container {
-    display:flex;
+    display: flex;
+    align-items: center;
 }
 
-.keynote-card {
-    height: 100%;
-    margin-left: 4px;
-    margin-right: 4px;
+.keynote-name {
+    font-weight: bold;
 }
 
 /* sponser.html */
@@ -202,14 +196,8 @@ h1 {
         font-size: 24px;
     }
 
-
-    .keynote-card {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
     .keynote-container {
-        display:unset;
+        display: unset;
     }
 
     .sponser-logo {
@@ -222,8 +210,6 @@ h1 {
         max-height: 100%;
         width: unset;
     }
-
-
 
     .nowrap-large {
         white-space: unset;
