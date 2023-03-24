@@ -8,7 +8,8 @@ body {
 
 body,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -42,6 +43,10 @@ h1 {
 
 .my-italic {
     font-style: italic;
+}
+
+.my-wide {
+    letter-spacing: 1px;
 }
 
 /* Main */
