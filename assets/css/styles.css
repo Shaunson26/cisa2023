@@ -179,6 +179,15 @@ h1 {
     width: 100%;
 }
 
+.my-footer-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    margin: auto;
+}
+
 /* Mobile */
 @media only screen and (max-width: 600px) {
 
