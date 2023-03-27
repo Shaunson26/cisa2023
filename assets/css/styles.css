@@ -62,11 +62,11 @@ h1 {
     align-items: center;
 }
 
-:target:before {
+/*:target:before {
     content: "";
     display: block;
     height: 50px;
-}
+}*/
 
 #language {
     position: fixed;

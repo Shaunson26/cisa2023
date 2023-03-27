@@ -25,7 +25,7 @@ function displayTab(tabID) {
     let documentScrollHeight = document.documentElement.scrollHeight
     let windowInnerHeight = window.innerHeight
 
-    console.log('docu height', documentScrollHeight, 'window height', windowInnerHeight)
+    //console.log('docu height', documentScrollHeight, 'window height', windowInnerHeight)
 
     if (documentScrollHeight <= windowInnerHeight) {
         footer.classList.add("w3-bottom");

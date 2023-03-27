@@ -119,6 +119,14 @@
       },
         1000)
 
+      // If # is used
+      if (window.location.href.includes('#')) {
+            if (location.hash.length > 0 & !location.hash.includes('keynote')) {
+          displayTab(location.hash.substring(1));
+        }
+
+      }
+
     };
   </script>
 
