@@ -20,9 +20,10 @@ function displayTab(tabID) {
 
     // toggle footer colour and position
     let footer = document.getElementsByTagName('footer')[0]
-    
+    let footerButtons = document.getElementsByClassName('my-footer-button')[0]
+       
     //let documentScrollHeight = document.body.scrollHeight
-    let documentScrollHeight = document.documentElement.scrollHeight
+    /*let documentScrollHeight = document.documentElement.scrollHeight
     let windowInnerHeight = window.innerHeight
 
     //console.log('docu height', documentScrollHeight, 'window height', windowInnerHeight)
@@ -31,16 +32,21 @@ function displayTab(tabID) {
         footer.classList.add("w3-bottom");
     } else {
         footer.classList.remove("w3-bottom");
-    }
+    }*/
 
     let isHome = tabID.includes('home')
 
     if (isHome) {
+        console.log('home')
         footer.classList.remove("my-white");
         footer.classList.add("my-black");
+        footerButtons.classList.add("w3-hover-white")
+        footerButtons.classList.remove("w3-hover-black")
     } else {
-        footer.classList.add("my-white");
         footer.classList.remove("my-black");
+        footer.classList.add("my-white");
+        footerButtons.classList.add("w3-hover-black")
+        footerButtons.classList.remove("w3-hover-white")
     }
 }
 
