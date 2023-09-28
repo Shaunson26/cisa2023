@@ -37,7 +37,7 @@ function displayTab(tabID) {
     let isHome = tabID.includes('home')
 
     if (isHome) {
-        console.log('home')
+        //console.log('home')
         footer.classList.remove("my-white");
         footer.classList.add("my-black");
         footerButtons.classList.add("w3-hover-white")

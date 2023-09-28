@@ -102,9 +102,8 @@
   </footer>
 
   <script>
-    w3.includeHTML();
-    window.onload = (event) => {
-      setTimeout(function () {
+    w3.includeHTML(function () {
+
         let body = document.getElementsByTagName('body')[0]
         var opacity = 0;
         var intervalID = setInterval(function () {
@@ -115,18 +114,20 @@
           } else {
             clearInterval(intervalID);
           }
-        }, 10);
-      },
-        1000)
 
-      // If # is used
-      if (window.location.href.includes('#')) {
-            if (location.hash.length > 0 & !location.hash.includes('keynote')) {
-          displayTab(location.hash.substring(1));
-        }
+        },
+          10);
+      })   
+
+
+    // If # is used
+    if (window.location.href.includes('#')) {
+      if (location.hash.length > 0 & !location.hash.includes('keynote')) {
+        displayTab(location.hash.substring(1));
       }
+    }
 
-    };
+
   </script>
 
 </body>
